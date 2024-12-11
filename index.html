@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro e Inicio de Sesión</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container" id="registerFormContainer">
+            <h1>Registro</h1>
+            <form id="formularioRegistro">
+                <div class="form-group">
+                    <label for="nombre">Nombres</label>
+                    <input type="text" id="nombre" placeholder="Ingresa tus nombres" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellidos</label>
+                    <input type="text" id="apellido" placeholder="Ingresa tus apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha de nacimiento</label>
+                    <input type="date" id="fecha" required>
+                </div>
+                <button type="button" id="generarCorreo">Generar correo</button>
+                <div class="form-group">
+                    <label for="correo">Correo generado</label>
+                    <input type="text" id="correo" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="passwordRegistro">Contraseña</label>
+                    <input type="password" id="passwordRegistro" placeholder="Contraseña" required>
+                    <button type="button" id="togglePasswordRegistro">Mostrar</button>
+                </div>
+                <small>Debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, un número y un
+                    símbolo.</small>
+                <button type="submit" id="submitButton" disabled>Registrar</button>
+            </form>
+        </div>
+
+        <div class="form-container" id="loginFormContainer">
+            <h1>Inicio de Sesión</h1>
+            <form id="formularioLogin">
+                <div class="form-group">
+                    <label for="correoLogin">Correo</label>
+                    <input type="text" id="correoLogin" placeholder="Ingresa tu correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="passwordLogin">Contraseña</label>
+                    <input type="password" id="passwordLogin" placeholder="Contraseña" required>
+                    <button type="button" id="togglePasswordLogin">Mostrar</button>
+                </div>
+                <button type="submit" id="loginButton">Iniciar Sesión</button>
+                <p><a href="#" id="forgotPassword">¿Olvidaste tu contraseña?</a></p>
+            </form>
+        </div>
+
+        <div class="form-container" id="resetPasswordContainer" style="display: none;">
+            <h1>Restablecer Contraseña</h1>
+            <form id="formularioResetPassword">
+                <div class="form-group">
+                    <label for="correoReset">Correo</label>
+                    <input type="text" id="correoReset" placeholder="Ingresa tu correo registrado" required>
+                </div>
+                <button type="button" id="sendCodeButton">Enviar Código</button>
+                <div id="verificationSection" style="display: none;">
+                    <div class="form-group">
+                        <label for="verificationCode">Código de Verificación</label>
+                        <input type="text" id="verificationCode" placeholder="Código recibido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Nueva Contraseña</label>
+                        <input type="password" id="newPassword" placeholder="Nueva contraseña" required>
+                        <button type="button" id="toggleNewPassword">Mostrar</button>
+                    </div>
+                    <button type="submit" id="resetPasswordButton">Restablecer Contraseña</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
